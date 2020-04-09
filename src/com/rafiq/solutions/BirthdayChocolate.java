@@ -1,4 +1,4 @@
-package com.rafiq.hackkerrank;
+package com.rafiq.solutions;
 
 import java.util.Arrays;
 import java.util.List;
