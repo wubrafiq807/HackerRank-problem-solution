@@ -47,17 +47,7 @@ public class Solution {
 
     }
     
-    private static int findIndex(Map<Integer, Integer> expirationMap,int value) {    	
-    for (Integer key : expirationMap.keySet()) {
-       if(key>value) {
-    	   return expirationMap.get(key);
-       }
-    }
-    return 0;
-		
-		
-    	
-    }
+    
 
 	public static void main(String[] args) {
 		
