@@ -7,11 +7,16 @@ public class Solution {
 
 	/*
 	 * Function for luckBalance function below
+	 * 
 	 * @param int k
-	 * @param  int[][] contests <Two dimensional array with contest number and importance>
+	 * 
+	 * @param int[][] contests <Two dimensional array with contest number and
+	 * importance>
+	 * 
 	 * @return int
+	 * 
 	 * @author Md Rafiqul Islam
-	 * */
+	 */
 	static int luckBalance(int k, int[][] contests) {
 		int countImportant = 0;
 		long sum = 0;
@@ -22,35 +27,35 @@ public class Solution {
 				countImportant++;
 				// add important contest into array list
 				listConTest.add(contests[i][0]);
-				
+
 			}
 
 			sum += contests[i][0];
 		}
 		int winCounter = countImportant - k;
-		
+
 // if important contest is not equal to min contest to be passed
 		if (countImportant != k) {
 			int someValueTobeSkiped = 0;
-		// find the minimum numbers list to be skiped
+			// find the minimum numbers list to be skiped
 			for (int i = 0; i < winCounter; i++) {
 				int min = listConTest.get(0);
 				int minIndex = 0;
-				// for loop to find the min munber from listConTest array list 
+				// for loop to find the min munber from listConTest array list
 				for (int j = 0; j < listConTest.size(); j++) {
 					if (listConTest.get(j) < min) {
 						min = listConTest.get(j);
 						minIndex = j;
-					}					
+					}
 
 				}
-				// sum value to be calculate 
+				// sum value to be calculate
 				someValueTobeSkiped += listConTest.get(minIndex);
-				// delete the min value from the listConTest array list 
+				// delete the min value from the listConTest array list
 				listConTest.remove(minIndex);
-				
+
 			}
-			sum=sum-(someValueTobeSkiped*2);
+			sum = sum - (someValueTobeSkiped * 2);
 
 		}
 		return (int) sum;
