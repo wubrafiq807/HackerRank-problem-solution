@@ -27,21 +27,18 @@ public class Solution {
 		for (int i = 0; i < arr.length; i++) {
 			list.add(arr[i]);
 		}
+		// array list for element after  every iteration
 		List<Integer> afterDeleted = new ArrayList<Integer>();
 		while (true) {
+			// check for distinct values
 			if (list.stream().distinct().count() == 1) {
 				afterDeleted.add(list.size());
 				break;
 
-			}
-			if (Arrays.stream(arr).distinct().count() == 1) {
-				afterDeleted.add(arr.length);
-				break;
-			}
+			}		
 			
 			afterDeleted.add(list.size());
-			if (list.size() == 1)
-				break;
+			
 			int min = list.stream().min(Comparator.comparing(Integer::valueOf)).get();
 			list = list.stream().filter(x -> x > min).collect(Collectors.toList());
 
